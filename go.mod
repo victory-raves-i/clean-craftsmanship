@@ -1,3 +1,3 @@
-module mfernal/clean-craftsmanship
+module victory-raves-i/clean-craftsmanship
 
 go 1.21.1
