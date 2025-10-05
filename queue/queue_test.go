@@ -18,9 +18,6 @@ func TestEnqueueOneItem(t *testing.T) {
 	if q.Size() != 1 {
 		t.Error("Something went wrong trying to enqueue and item")
 	}
-	if q.elements[q.Size()-1] != 10 {
-		t.Error("Queue its no able to store one value correctly")
-	}
 }
 
 func TestEnqueueMultipleItems(t *testing.T) {
@@ -31,5 +28,16 @@ func TestEnqueueMultipleItems(t *testing.T) {
 
 	if q.Size() != 2 {
 		t.Error("Enqueue multiple values is not working")
+	}
+}
+
+func TestDequeueOneItem(t *testing.T) {
+	q := Queue{}
+
+	q.Enqueue(10)
+	value := q.Dequeue()
+
+	if q.Size() != 0 || value != 10 {
+		t.Error("Dequeue one item is not working")
 	}
 }
