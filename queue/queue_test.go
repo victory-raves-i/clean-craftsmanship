@@ -41,3 +41,14 @@ func TestDequeueOneItem(t *testing.T) {
 		t.Error("Dequeue one item is not working")
 	}
 }
+
+func TestDequeueFromEmptyQueue(t *testing.T) {
+	q := Queue{}
+
+	_, error := q.Dequeue()
+
+	if error == nil {
+		t.Error("Dequeue from empty Queue it not working")
+	}
+
+}
