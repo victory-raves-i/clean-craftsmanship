@@ -42,6 +42,25 @@ func TestDequeueOneItem(t *testing.T) {
 	}
 }
 
+func TestDequeueMultipleValues(t *testing.T) {
+	q := Queue{}
+
+	q.Enqueue(233)
+	q.Enqueue(43)
+
+	value, _ := q.Dequeue()
+
+	if value != 233 || q.Size() != 1 {
+		t.Error("Multiple values dequeue is not working")
+	}
+
+	value, _ = q.Dequeue()
+
+	if value != 43 || q.Size() != 0 {
+		t.Error("Multiple values dequeue is not working")
+	}
+}
+
 func TestDequeueFromEmptyQueue(t *testing.T) {
 	q := Queue{}
 
