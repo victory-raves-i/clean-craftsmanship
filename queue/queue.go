@@ -11,3 +11,10 @@ func (q *Queue) Size() int {
 func (q *Queue) Enqueue(value int) {
 	q.elements = append(q.elements, value)
 }
+
+func (q *Queue) Dequeue() int {
+	value := q.elements[0]
+	q.elements = q.elements[1:]
+
+	return value
+}
