@@ -71,3 +71,15 @@ func TestDequeueFromEmptyQueue(t *testing.T) {
 	}
 
 }
+
+func TestPeek(t *testing.T) {
+	q := Queue{}
+
+	q.Enqueue(33)
+
+	value := q.Peek()
+
+	if value != 33 {
+		t.Error("Peek functionality it is not working")
+	}
+}
