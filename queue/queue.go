@@ -26,3 +26,7 @@ func (q *Queue) Dequeue() (int, error) {
 
 	return value, nil
 }
+
+func (q *Queue) Peek() int {
+	return q.elements[0]
+}
