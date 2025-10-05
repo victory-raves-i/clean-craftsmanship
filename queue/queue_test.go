@@ -35,7 +35,7 @@ func TestDequeueOneItem(t *testing.T) {
 	q := Queue{}
 
 	q.Enqueue(10)
-	value := q.Dequeue()
+	value, _ := q.Dequeue()
 
 	if q.Size() != 0 || value != 10 {
 		t.Error("Dequeue one item is not working")
