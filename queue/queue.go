@@ -19,7 +19,7 @@ func (q *Queue) Enqueue(value int) {
 func (q *Queue) Dequeue() (int, error) {
 
 	if q.Size() == 0 {
-		return -1, errors.New("Queue is empty")
+		return 0, errors.New("Queue is empty")
 	}
 	value := q.elements[0]
 	q.elements = q.elements[1:]
