@@ -2,7 +2,7 @@
 
 This repo is intended for executing all the exercises that appear on the book called _clean craftsmanship_. Also the idea is learning `go` along the process.
 
-## 1. CHALLENGE: Queue
+## 1. Queue
 
 Implement a FIFO queue of integer following TDD.
 
@@ -22,7 +22,7 @@ A queue has a distinct front (or head) for removals and a rear (or tail) for add
 - isEmpty: Checks if the queue contains any elements.
 - Size: Returns the number of elements currently in the queue.
 
-## 2. CHALLENGE: The Word Wrap Problem
+## 2. The Word Wrap Problem
 
 Imagine you're writing text, but you have a limited width - like an old terminal screen or a narrow column in a newspaper. The word wrap problem is: given a string of text and a maximum line width, how do you break that text into multiple lines so that:
 
