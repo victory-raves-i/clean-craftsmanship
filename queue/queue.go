@@ -27,6 +27,11 @@ func (q *Queue) Dequeue() (int, error) {
 	return value, nil
 }
 
-func (q *Queue) Peek() int {
-	return q.elements[0]
+func (q *Queue) Peek() (int, error) {
+
+	if q.Size() == 0 {
+		return 0, errors.New("You cannot read a value form an empty queue")
+	}
+
+	return q.elements[0], nil
 }
