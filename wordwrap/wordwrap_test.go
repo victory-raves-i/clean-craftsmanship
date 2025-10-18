@@ -13,7 +13,3 @@ func TestEmptyString(t *testing.T) {
 		t.Error("Function does not work with empty string")
 	}
 }
-
-func TestTextSmallerThanWidth(t *testing.T) {
-	w, err := Wrap("the quick brown fox jumps", 100)
-}
