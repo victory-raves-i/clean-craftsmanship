@@ -20,4 +20,10 @@ func TestTextSmallerThanWidth(t *testing.T) {
 	if w != "the" {
 		t.Error("Width checker is not working")
 	}
+
+	x, _ := Wrap("the King", 10)
+
+	if x != "the King" {
+		t.Error("Width checker is not working")
+	}
 }
