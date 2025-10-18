@@ -9,7 +9,7 @@ func TestEmptyString(t *testing.T) {
 		t.Error("Function does not exist or it is not declared")
 	}
 
-	if w != "" {
+	if w[0] != "" {
 		t.Error("Function does not work with empty string")
 	}
 }
@@ -17,19 +17,28 @@ func TestEmptyString(t *testing.T) {
 func TestTextSmallerThanWidth(t *testing.T) {
 	w, _ := Wrap("the", 4)
 
-	if w != "the" {
+	if w[0] != "the" {
 		t.Error("Width checker for 1 word is not working")
 	}
 
 	x, _ := Wrap("the King", 10)
 
-	if x != "the King" {
+	if x[0] != "the King" {
 		t.Error("Width checker for two words is not working")
 	}
 
 	y, _ := Wrap("the King of the world", 22)
 
-	if y != "the King of the world" {
+	if y[0] != "the King of the world" {
 		t.Error("Width checker for more than two words is not working")
 	}
+}
+
+func TestTextBiggerThanWidth(t *testing.T) {
+	w, _ := Wrap("the", 2)
+
+	if w[0] != "th" && w[1] != "e" {
+		t.Error("Not able to wrap a single word")
+	}
+
 }
