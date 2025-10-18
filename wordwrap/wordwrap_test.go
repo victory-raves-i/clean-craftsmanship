@@ -13,3 +13,11 @@ func TestEmptyString(t *testing.T) {
 		t.Error("Function does not work with empty string")
 	}
 }
+
+func TestTextSmallerThanWidth(t *testing.T) {
+	w, _ := Wrap("the", 4)
+
+	if w != "the" {
+		t.Error("Width checker is not working")
+	}
+}
