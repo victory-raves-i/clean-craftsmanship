@@ -37,8 +37,14 @@ func TestTextSmallerThanWidth(t *testing.T) {
 func TestTextBiggerThanWidth(t *testing.T) {
 	w, _ := Wrap("the", 2)
 
-	if w[0] != "th" && w[1] != "e" {
+	if w[0] != "th" || w[1] != "e" {
 		t.Error("Not able to wrap a single word")
+	}
+
+	x, _ := Wrap("the King", 2)
+
+	if x[0] != "th" || x[1] != "e " || x[2] != "Ki" || x[3] != "ng" {
+		t.Error("Not able to wrap text with two words")
 	}
 
 }
