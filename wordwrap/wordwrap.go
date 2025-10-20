@@ -1,17 +1,18 @@
 package wordwrap
 
+import (
+	s "strings"
+)
+
 func Wrap(text string, width int) ([]string, error) {
-	var s []string
-
+	var result []string
 	if len(text) < width {
-		s = append(s, text)
-		return s, nil
-	} else {
-		s = append(s, text[:width])
-		s = append(s, text[width:])
-
+		result = append(result, text)
+	} else if !s.Contains(text, " ") {
+		result = append(result, text[:width])
+		result = append(result, text[width:])
 	}
 
-	return s, nil
+	return result, nil
 
 }
