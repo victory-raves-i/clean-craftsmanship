@@ -47,4 +47,9 @@ func TestTextBiggerThanWidth(t *testing.T) {
 		t.Error("Not able to wrap text with two words without taking into consideration spaces")
 	}
 
+	y, _ := Wrap("the King", 3)
+	if y[0] != "the" || y[1] != " Ki" || y[2] != "ng" {
+		t.Error("Not able to wrap text with three characters without taking into consideration spaces")
+	}
+
 }
