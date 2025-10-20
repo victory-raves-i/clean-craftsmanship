@@ -4,15 +4,18 @@ import "fmt"
 
 func Wrap(text string, width int) ([]string, error) {
 	var result []string
+	var length int // Length of the text
 
-	if len(text) < width {
+	length = len(text)
+
+	if length < width {
 		result = append(result, text)
 	} else {
 		init := 0
 		end := init + width
-		for init < len(text) {
-			if end > len(text) {
-				end = len(text)
+		for init < length {
+			if end > length {
+				end = length
 			}
 			result = append(result, text[init:end])
 			init = end
