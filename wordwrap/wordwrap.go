@@ -4,9 +4,8 @@ import "fmt"
 
 func Wrap(text string, width int) ([]string, error) {
 	var result []string
-	var length int // Length of the text
 
-	length = len(text)
+	length := len(text)
 
 	if length < width {
 		result = append(result, text)
@@ -23,7 +22,7 @@ func Wrap(text string, width int) ([]string, error) {
 		}
 	}
 
-	fmt.Print(result)
+	fmt.Println(result)
 
 	return result, nil
 
