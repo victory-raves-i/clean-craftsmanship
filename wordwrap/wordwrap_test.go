@@ -21,15 +21,15 @@ func TestTextSmallerThanWidth(t *testing.T) {
 		t.Error("Width checker for 1 word is not working")
 	}
 
-	x, _ := Wrap("the King", 10)
+	w, _ = Wrap("the King", 10)
 
-	if x[0] != "the King" {
+	if w[0] != "the King" {
 		t.Error("Width checker for two words is not working")
 	}
 
-	y, _ := Wrap("the King of the world", 22)
+	w, _ = Wrap("the King of the world", 22)
 
-	if y[0] != "the King of the world" {
+	if w[0] != "the King of the world" {
 		t.Error("Width checker for more than two words is not working")
 	}
 }
@@ -41,14 +41,14 @@ func TestTextBiggerThanWidth(t *testing.T) {
 		t.Error("Not able to wrap a single word")
 	}
 
-	x, _ := Wrap("the King", 2)
+	w, _ = Wrap("the King", 2)
 
-	if x[0] != "th" || x[1] != "e " || x[2] != "Ki" || x[3] != "ng" {
+	if w[0] != "th" || w[1] != "e " || w[2] != "Ki" || w[3] != "ng" {
 		t.Error("Not able to wrap text with two words without taking into consideration spaces")
 	}
 
-	y, _ := Wrap("the King", 3)
-	if y[0] != "the" || y[1] != " Ki" || y[2] != "ng" {
+	w, _ = Wrap("the King", 3)
+	if w[0] != "the" || w[1] != " Ki" || w[2] != "ng" {
 		t.Error("Not able to wrap text with three characters without taking into consideration spaces")
 	}
 
