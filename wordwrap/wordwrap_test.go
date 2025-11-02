@@ -53,3 +53,11 @@ func TestTextBiggerThanWidth(t *testing.T) {
 	}
 
 }
+
+func TextBiggerThanWidthSpaces(t *testing.T){
+	w, _ := Wrap("the King of the World", 10)
+
+	if w[0] != "the King " || w[1] != "of the " || w[2] =! "World" {
+		t.Error("Not able to take into consideration spaces")
+	}
+}
