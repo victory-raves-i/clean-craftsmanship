@@ -1,6 +1,9 @@
 package wordwrap
 
-import "fmt"
+import (
+	"fmt"
+	s "strings"
+)
 
 func Wrap(text string, width int) ([]string, error) {
 	var result []string
@@ -16,6 +19,12 @@ func Wrap(text string, width int) ([]string, error) {
 			if end > length {
 				end = length
 			}
+
+			lastSpace := s.LastIndex(text[init:end], " ")
+			if lastSpace != -1 {
+				end = init + lastSpace + 1
+			}
+
 			result = append(result, text[init:end])
 			init = end
 			end = init + width
