@@ -31,7 +31,7 @@ func Wrap(text string, width int) ([]string, error) {
 		}
 	}
 
-	fmt.Print(s.Repeat("-", 20))
+	fmt.Print(s.Repeat("-", 20) + "\n")
 	text = s.Join(result, "\n")
 	fmt.Println(text)
 	fmt.Print(s.Repeat("-", 20))
