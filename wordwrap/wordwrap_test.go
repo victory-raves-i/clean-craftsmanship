@@ -36,13 +36,11 @@ func TestTextSmallerThanWidth(t *testing.T) {
 
 func TestTextBiggerThanWidth(t *testing.T) {
 	w, _ := Wrap("the", 2)
-
 	if w[0] != "th" || w[1] != "e" {
 		t.Error("Not able to wrap a single word")
 	}
 
 	w, _ = Wrap("the King", 2)
-
 	if w[0] != "th" || w[1] != "e " || w[2] != "Ki" || w[3] != "ng" {
 		t.Error("Not able to wrap text with two words without taking into consideration spaces")
 	}
@@ -54,10 +52,9 @@ func TestTextBiggerThanWidth(t *testing.T) {
 
 }
 
-func TextBiggerThanWidthSpaces(t *testing.T){
+func TestTextBiggerThanWidthSpaces(t *testing.T) {
 	w, _ := Wrap("the King of the World", 10)
-
-	if w[0] != "the King " || w[1] != "of the " || w[2] =! "World" {
+	if w[0] != "the King " || w[1] != "of the " || w[2] != "World" {
 		t.Error("Not able to take into consideration spaces")
 	}
 }
